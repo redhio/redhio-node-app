@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import { Popover, ActionList, Button } from '@shopify/polaris';
+import { Popover, ActionList, Button } from '@redhio/polaris';
 import { updateVerb } from '../actions';
 
 
