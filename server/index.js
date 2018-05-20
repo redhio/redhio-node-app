@@ -24,7 +24,7 @@ const {
   NODE_ENV,
 } = process.env;
 
-const shopifyConfig = {
+const redhioConfig = {
   host: REDHIO_APP_HOST,
   apiKey: REDHIO_APP_KEY,
   secret: REDHIO_APP_SECRET,
