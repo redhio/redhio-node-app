@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 
-import { Layout, Stack, Card, TextField, Button } from '@shopify/polaris';
+import { Layout, Stack, Card, TextField, Button } from '@redhio/polaris';
 import ObjectInspector from 'react-object-inspector';
 import { updatePath, updateParams, sendRequest } from '../actions';
 
