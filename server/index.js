@@ -13,21 +13,21 @@ const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../config/webpack.config.js');
 
-const ShopifyAPIClient = require('shopify-api-node');
-const ShopifyExpress = require('@shopify/shopify-express');
-const {MemoryStrategy} = require('@shopify/shopify-express/strategies');
+const RedhioAPIClient = require('redhio-api-node');
+const RedhioExpress = require('@redhio/redhio-express');
+const {MemoryStrategy} = require('@redhio/redhio-express/strategies');
 
 const {
-  SHOPIFY_APP_KEY,
-  SHOPIFY_APP_HOST,
-  SHOPIFY_APP_SECRET,
+  REDHIO_APP_KEY,
+  REDHIO_APP_HOST,
+  REDHIO_APP_SECRET,
   NODE_ENV,
 } = process.env;
 
 const shopifyConfig = {
-  host: SHOPIFY_APP_HOST,
-  apiKey: SHOPIFY_APP_KEY,
-  secret: SHOPIFY_APP_SECRET,
+  host: REDHIO_APP_HOST,
+  apiKey: REDHIO_APP_KEY,
+  secret: REDHIO_APP_SECRET,
   scope: ['write_orders, write_products'],
   shopStore: new MemoryStrategy(),
   afterAuth(request, response) {
@@ -35,7 +35,7 @@ const shopifyConfig = {
 
     registerWebhook(shop, accessToken, {
       topic: 'orders/create',
-      address: `${SHOPIFY_APP_HOST}/order-create`,
+      address: `${REDHIO_APP_HOST}/order-create`,
       format: 'json'
     });
 
@@ -44,8 +44,8 @@ const shopifyConfig = {
 };
 
 const registerWebhook = function(shopDomain, accessToken, webhook) {
-  const shopify = new ShopifyAPIClient({ shopName: shopDomain, accessToken: accessToken });
-  shopify.webhook.create(webhook).then(
+  const redhio = new RedhioAPIClient({ shopName: shopDomain, accessToken: accessToken });
+  redhio.webhook.create(webhook).then(
     response => console.log(`webhook '${webhook.topic}' created`),
     err => console.log(`Error creating webhook '${webhook.topic}'. ${JSON.stringify(err.response.body)}`)
   );
@@ -60,7 +60,7 @@ app.use(logger('dev'));
 app.use(
   session({
     store: isDevelopment ? undefined : new RedisStore(),
-    secret: SHOPIFY_APP_SECRET,
+    secret: REDHIO_APP_SECRET,
     resave: true,
     saveUninitialized: false,
   })
@@ -95,20 +95,20 @@ if (isDevelopment) {
 app.get('/install', (req, res) => res.render('install'));
 
 // Create shopify middlewares and router
-const shopify = ShopifyExpress(shopifyConfig);
+const redhio = RedhioExpress(redhioConfig);
 
 // Mount Shopify Routes
-const {routes, middleware} = shopify;
+const {routes, middleware} = redhio;
 const {withShop, withWebhook} = middleware;
 
-app.use('/shopify', routes);
+app.use('/redhio', routes);
 
 // Client
 app.get('/', withShop({authBaseUrl: '/shopify'}), function(request, response) {
   const { session: { shop, accessToken } } = request;
   response.render('app', {
-    title: 'Shopify Node App',
-    apiKey: shopifyConfig.apiKey,
+    title: 'Redhio Node App',
+    apiKey: redhioConfig.apiKey,
     shop: shop,
   });
 });
