@@ -44,7 +44,7 @@ export function sendRequest(requestFields) {
   return dispatch => {
     dispatch(requestStartAction());
 
-    return fetch(`/shopify/api${path}`, fetchOptions)
+    return fetch(`/redhio/api${path}`, fetchOptions)
       .then(response => response.json())
       .then(json => dispatch(requestCompleteAction(json)))
       .catch(error => {
