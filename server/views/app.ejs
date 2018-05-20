@@ -6,27 +6,27 @@
     <title><%= title %></title>
   </head>
   <body>
-    <script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+    <script src="http://api.redh.io/assets/external/app.js"></script>
 
     <script>
       window.apiKey = "<%= apiKey %>"
       window.shopOrigin = "https://<%= shop %>"
 
-      const shopifyAppConfig = {
+      const redhioAppConfig = {
         apiKey: window.apiKey,
         shopOrigin: window.shopOrigin,
       }
 
-      // This will allow you to access the app outside of the Shopify
+      // This will allow you to access the app outside of the Redhio
       // parent iframe in development mode. Doing this will give you
       // access to React and Redux dev tools, but will also disrupt
-      // postmessages to the parent and block EASDK calls
-      // https://help.shopify.com/api/sdks/shopify-apps/embedded-app-sdk/methods#shopifyapp-init-config
+      // postmessages to the parent and block MLSDK calls
+      // https://help.redh.io/api/sdks/redhio-apps/embedded-app-sdk/methods#redhioapp-init-config
       if ("<%= process.env.NODE_ENV %>" === 'development') {
-        shopifyAppConfig.forceRedirect = false;
+        redhioAppConfig.forceRedirect = false;
       }
 
-      ShopifyApp.init(shopifyAppConfig);
+      RedhioApp.init(redhioAppConfig);
     </script>
 
     <div id="root"></div>
