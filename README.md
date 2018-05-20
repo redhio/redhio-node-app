@@ -1,10 +1,10 @@
-# Redhio Node App
+# Redhio Node DApp
 
 The goal of this example app is to provide a starting point for Redhio app developers so that they will be able to quickly
 spin up an embedded Redhio ML app using Node and Express.js and get started using the Polaris design system and React components.
 Forked from Shopify Node App
 
-This example app uses Node, Express, Webpack, React, Redux, and Redhio/polaris
+This example app uses Node, Express, Webpack, React, Redux, Web3, and Redhio/polaris
 
 ## Features
 - [x] React app using [Polaris](https://polaris.redh.io/)
@@ -15,6 +15,7 @@ This example app uses Node, Express, Webpack, React, Redux, and Redhio/polaris
 - [x] Hot reloading with Webpack
 - [x] Example data flow with Redux and Polaris React components
 - [x] Example webhook set up
+- [x] Example Ethereum set up
 
 ## Commands
 - `yarn run start` run the server
