@@ -2,6 +2,7 @@
 .DS_Store
 assets/
 node_modules/
+private/
 dump.rdb
 main.js
 db.sqlite3
