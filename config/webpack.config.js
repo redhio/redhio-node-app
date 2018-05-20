@@ -36,7 +36,7 @@ module.exports = {
   entry: {
     main: [
       ...extraEntryFiles,
-      '@shopify/polaris/styles.css',
+      '@redhio/polaris/styles.css',
       path.resolve(__dirname, '../client/index.js'),
     ],
   },
@@ -80,7 +80,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: path.resolve(__dirname, '../node_modules/@shopify/polaris'),
+        include: path.resolve(__dirname, '../node_modules/@redhio/polaris'),
         loaders: [
           {
             loader: 'style-loader',
