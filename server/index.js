@@ -94,17 +94,17 @@ if (isDevelopment) {
 // Install
 app.get('/install', (req, res) => res.render('install'));
 
-// Create shopify middlewares and router
+// Create redhio middlewares and router
 const redhio = RedhioExpress(redhioConfig);
 
-// Mount Shopify Routes
+// Mount Redhio Routes
 const {routes, middleware} = redhio;
 const {withShop, withWebhook} = middleware;
 
 app.use('/redhio', routes);
 
 // Client
-app.get('/', withShop({authBaseUrl: '/shopify'}), function(request, response) {
+app.get('/', withShop({authBaseUrl: '/redhio'}), function(request, response) {
   const { session: { shop, accessToken } } = request;
   response.render('app', {
     title: 'Redhio Node App',
