@@ -2,11 +2,11 @@
 # yarn lockfile v1
 
 
-"@shopify/images@^1.1.0":
+"@redhio/images@^1.1.0":
   version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@shopify/images/-/images-1.1.3.tgz#b1aece3174beb101375ace13c6651b7049648b79"
+  resolved "https://registry.yarnpkg.com/@redhio/images/-/images-1.1.3.tgz#b1aece3174beb101375ace13c6651b7049648b79"
 
-"@shopify/javascript-utilities@^1.1.0":
+"@redhio/javascript-utilities@^1.1.0":
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/@shopify/javascript-utilities/-/javascript-utilities-1.1.6.tgz#f9272feb1f0b7a3dd63a9e490548b17055e6d9f2"
   dependencies:
@@ -14,22 +14,22 @@
     "@types/react" "^15.0.21"
     lodash "^4.17.4"
 
-"@shopify/javascript-utilities@^2.0.0":
+"@redhio/javascript-utilities@^2.0.0":
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@shopify/javascript-utilities/-/javascript-utilities-2.1.0.tgz#b04b2787dd66329b8261b62ebe61bdf85790d6c7"
+  resolved "https://registry.yarnpkg.com/@redhio/javascript-utilities/-/javascript-utilities-2.1.0.tgz#b04b2787dd66329b8261b62ebe61bdf85790d6c7"
   dependencies:
     "@types/lodash" "^4.14.65"
     "@types/react" "^16.0.2"
     lodash "^4.17.4"
     lodash-decorators "^4.3.5"
 
-"@shopify/polaris@^1.8.3":
+"@redhio/polaris@^1.8.3":
   version "1.8.3"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-1.8.3.tgz#f2766a96b5f721bd06a67ec014f5ce9ccf672b90"
+  resolved "https://registry.yarnpkg.com/@redhio/polaris/-/polaris-1.8.3.tgz#f2766a96b5f721bd06a67ec014f5ce9ccf672b90"
   dependencies:
-    "@shopify/images" "^1.1.0"
-    "@shopify/javascript-utilities" "^2.0.0"
-    "@shopify/react-utilities" "^1.2.0"
+    "@redhio/images" "^1.1.0"
+    "@redhio/javascript-utilities" "^2.0.0"
+    "@redhio/react-utilities" "^1.2.0"
     "@types/prop-types" "^15.5.2"
     "@types/react" "^16.0.10"
     "@types/react-dom" "^16.0.1"
@@ -42,11 +42,11 @@
     react-transition-group "^2.2.1"
     tslib "^1.7.1"
 
-"@shopify/react-utilities@^1.2.0":
+"@redhio/react-utilities@^1.2.0":
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@shopify/react-utilities/-/react-utilities-1.2.0.tgz#a4caab29026d44afa55bf2e407ce6cb7f0509694"
+  resolved "https://registry.yarnpkg.com/@redhio/react-utilities/-/react-utilities-1.2.0.tgz#a4caab29026d44afa55bf2e407ce6cb7f0509694"
   dependencies:
-    "@shopify/javascript-utilities" "^1.1.0"
+    "@redhio/javascript-utilities" "^1.1.0"
     "@types/classnames" "^0.0.32"
     "@types/node" "^7.0.12"
     "@types/react" "^15.0.21"
@@ -55,9 +55,9 @@
     core-js "^2.4.1"
     react-addons-transition-group "^15.4.2"
 
-"@shopify/shopify-express@^1.0.0-alpha.7":
+"@redhio/redhio-express@^1.0.0-alpha.7":
   version "1.0.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/@shopify/shopify-express/-/shopify-express-1.0.0-alpha.7.tgz#3cda42038cec51ae2be4543cabb952520c3bf0eb"
+  resolved "https://registry.yarnpkg.com/@shopify/redhio-express/-/redhio-express-1.0.0-alpha.7.tgz#3cda42038cec51ae2be4543cabb952520c3bf0eb"
   dependencies:
     body-parser "^1.18.2"
     connect-redis "^3.3.0"
@@ -5650,9 +5650,9 @@ shelljs@^0.7.5:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-shopify-api-node@^2.11.0:
+redhio-api-node@^2.11.0:
   version "2.12.0"
-  resolved "https://registry.yarnpkg.com/shopify-api-node/-/shopify-api-node-2.12.0.tgz#7f469dfe4db315a5f5c9bc822f7ff954e9d69b02"
+  resolved "https://registry.yarnpkg.com/redhio-api-node/-/redhio-api-node-2.12.0.tgz#7f469dfe4db315a5f5c9bc822f7ff954e9d69b02"
   dependencies:
     got "^8.0.0"
     lodash "^4.6.0"
