@@ -3,14 +3,14 @@ import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
 
 const requestFields = {
-  verb: 'POST',
-  path: '/products.json',
+  verb: 'GET',
+  path: '/models.json',
   params: JSON.stringify({
-    product: {
-      title: "Burton Custom Freestyle 151",
-      body_html: "<strong>Good snowboard!<\/strong>",
-      vendor: "Burton",
-      product_type: "Snowboard"
+    model: {
+      title: "Generic ML Model",
+      body_html: "<strong>Good AI!<\/strong>",
+      vendor: "redhIO",
+      product_type: "ML Model"
     }
   }, null, 2)
 };
