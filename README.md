@@ -4,11 +4,11 @@ The goal of this example app is to provide a starting point for Redhio app devel
 spin up an embedded Redhio ML app using Node and Express.js and get started using the Polaris design system and React components.
 Forked from Shopify Node App
 
-This example app uses Node, Express, Webpack, React, Redux, and Shopify/polaris
+This example app uses Node, Express, Webpack, React, Redux, and Redhio/polaris
 
 ## Features
-- [x] React app using [Polaris](https://polaris.shopify.com/)
-- [x] Shopify Authentication (add Ethereum authentication)
+- [x] React app using [Polaris](https://polaris.redh.io/)
+- [x] Redhio Authentication (add Ethereum authentication)
 - [x] Get API data from Shopify and pass it to React
 - [x] Get API data from Redhio and pass it to React
 - [x] Get API data from Ethereum and pass it to React
@@ -29,22 +29,22 @@ This example app uses Node, Express, Webpack, React, Redux, and Shopify/polaris
 - Install the [Yarn.js](https://yarnpkg.com/en/docs/install) package manager. Yarn is an alternative to npm that is faster and more reliable.
 - Install project dependencies with `yarn install`
 
-### Allow your app to talk to Shopify
-- Create a tunnel to localhost:3000 using [forward](https://forwardhq.com/) or [ngrok](https://ngrok.com/)
+### Allow your app to talk to Redhio
+- Create a tunnel to localhost:8082 using [forward](https://forwardhq.com/) or [ngrok](https://ngrok.com/)
   - Note the tunnel url (we’ll refer to it as `HOST`)
 
 ### Register your app in the Partner Dashboard
-- Sign into your [Shopify Partner Dashboard](https://partners.shopify.com/organizations)
+- Sign into your [Redhio Partner Dashboard](https://app.redh.io/register)
 - Click 'Apps' in the sidebar and create a new app
 - Set the app url to `{{ HOST }}/`
-- Set the whitelisted URL to `{{ HOST }}/shopify/auth/callback`
-- Go to extensions tab and enable “Embed in Shopify admin”
+- Set the whitelisted URL to `{{ HOST }}/redhio/auth/callback`
+- Go to extensions tab and enable “Embed in Redhio admin”
 
 ### Configure and add to a store
 - Rename `.env.example` to `.env` and
-  - Set Add HOST from your tunnel service as `SHOPIFY_APP_HOST`
-  - Add the api key from partners dash as `SHOPIFY_APP_KEY`
-  - Add the api secret from partners dash as `SHOPIFY_APP_SECRET`
+  - Set Add HOST from your tunnel service as `REDHIO_APP_HOST`
+  - Add the api key from partners dash as `REDHIO_APP_KEY`
+  - Add the api secret from partners dash as `REDHIO_APP_SECRET`
 - Run `yarn install && yarn run start`
 - Open a browser to `{{ HOST }}/install`
 - Enter your store’s domain and hit install
@@ -59,13 +59,13 @@ This folder provides the Express.js server as well as a few basic views.
 The server provides some example endpoints that demonstrate mounting the Shopify routes for installation and authentication, hosting the React app
 with an API proxy, and a basic webhook.
 
-The code here is mostly glue code, with the bulk of the actual functionality provided by the modules in `shopify-express`.
+The code here is mostly glue code, with the bulk of the actual functionality provided by the modules in `redhio-express`.
 
-### `shopify-express`
-This example app consumes the [shopify-express](https://github.com/shopify/shopify-express-app) library to quickly connect to the Shopify API.
+### `redhio-express`
+This example app consumes the [redhio-express](https://github.com/redhio/redhio-express-app) library to quickly connect to the redhIO API.
 
-### `shopify-api-node`
-This example app uses the Official [shopify-api-node](https://github.com/MONEI/Shopify-api-node) library to connect to the Shopify API.
+### `redhio-api-node`
+This example app uses the Official [redhio-api-node](https://github.com/Redhio/redhio-api-node) library to connect to the redhIO API.
 
 ### `client`
 This folder contains the UI demo using Polaris React components and Redux to manage app state.
