@@ -1,11 +1,12 @@
 require('isomorphic-fetch');
-require('dotenv').config();
+//require('dotenv').config();
+const path = require('path');
+var dotenv = require('dotenv').config({path: path.join('D:\\Apps\\redhio-node-app\\', '.env.redhio')});
 
 const fs = require('fs');
 const express = require('express');
 const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
-const path = require('path');
 const logger = require('morgan');
 
 const webpack = require('webpack');
